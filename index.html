@@ -438,6 +438,18 @@ body.daylight #map { background: #cfe0d6; }
 .legend div { display: flex; align-items: center; gap: 9px; font-size: 12.5px; color: var(--dim); }
 .legend i { width: 11px; height: 11px; border-radius: 50%; flex: 0 0 auto; }
 
+.locate-out {
+  margin-top: 11px; padding: 11px 12px;
+  background: var(--chip); border: 1px dashed var(--line-strong);
+  border-radius: 11px; font-size: 13px; color: var(--dim);
+}
+.locate-out p + .acts, .locate-out .acts { margin-top: 9px; }
+.locate-out .fix {
+  margin-top: 9px; font-size: 12px; color: var(--faint);
+  word-break: break-all;
+}
+.locate-out .fix a { color: var(--gold-soft); }
+
 .stamp { font-size: 11.5px; color: var(--faint); text-align: center; margin-top: 18px; }
 
 /* ============ Narrow: Fold cover screen ============ */
@@ -569,7 +581,7 @@ body.daylight #map { background: #cfe0d6; }
       <b>This preview isn’t running scripts,</b> so the map, the tabs and saved tee times are switched off and every section is listed below instead.
       Open this page in Safari or Chrome for the interactive version. All the Directions buttons still work here.
     </div>
-    <section class="panel" id="p-today" role="tabpanel"><div class="label">Today</div><article class="card open now" data-place="dub"><div class="head"><div class="badge b-air">18</div><div><h3>Depart Toronto</h3><div class="meta">Fri 18 Sep · WestJet 46 · about 22:10 ET</div></div></div><div class="body"><p>Overnight to Dublin. Waterproofs, shoes and a change of clothes in the carry-on — eight rounds is a bad week to lose a bag.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Wheels up</b><span>Toronto Pearson, local time</span></span><input type="time" data-slot="t-dep" value="" aria-label="Wheels up"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.4264,-6.2443" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="dub">Show on map</button></div></article><div class="label">Tomorrow</div><article class="card open" data-place="maldron"><div class="head"><div class="badge b-stay">19</div><div><h3>Land Dublin · Maldron Parnell Square</h3><div class="meta">Sat 19 Sep · Parnell Square West, D01 HX02</div></div></div><div class="body"><p>Land Saturday morning IST. One night at the Maldron before the run north. Pull euro cash — the Donegal end is euro, and you switch to sterling on Wednesday.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Landing</b><span>Dublin, IST</span></span><input type="time" data-slot="t-land" value="" aria-label="Landing"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.3544,-6.2664" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="maldron">Show on map</button></div></article><div class="label">At a glance</div><div class="rail"><div><b>11</b><span>Days</span></div><div><b>8</b><span>Rounds</span></div><div><b>4</b><span>Hotels</span></div><div><b>~930</b><span>km driven</span></div></div><article class="card static"><div class="head"><div class="badge b-air">☰</div><div><h3>Shea Norris · driver</h3><div class="meta">Deluxe Tours and Transfers</div></div></div><div class="acts"><span class="btn ghost wide" style="cursor:default">Number is in the private copy</span></div></article></section>
+    <section class="panel" id="p-today" role="tabpanel"><div class="label">Today</div><article class="card open now" data-place="dub"><div class="head"><div class="badge b-air">18</div><div><h3>Depart Toronto</h3><div class="meta">Fri 18 Sep · WestJet 46 · about 22:10 ET</div></div></div><div class="body"><p>Overnight to Dublin. Waterproofs, shoes and a change of clothes in the carry-on — eight rounds is a bad week to lose a bag.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Wheels up</b><span>Toronto Pearson, local time</span></span><input type="time" data-slot="t-dep" value="" aria-label="Wheels up"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.4264,-6.2443" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="dub">Show on map</button></div></article><div class="label">Tomorrow</div><article class="card open" data-place="maldron"><div class="head"><div class="badge b-stay">19</div><div><h3>Land Dublin · Maldron Parnell Square</h3><div class="meta">Sat 19 Sep · Parnell Square West, D01 HX02</div></div></div><div class="body"><p>Land Saturday morning IST. One night at the Maldron before the run north. Pull euro cash — the Donegal end is euro, and you switch to sterling on Wednesday.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Landing</b><span>Dublin, IST</span></span><input type="time" data-slot="t-land" value="" aria-label="Landing"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.3544,-6.2664" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="maldron">Show on map</button></div></article><div class="label">Find each other</div><article class="card static"><div class="head"><div class="badge b-stay">◎</div><div><h3>Drop my pin</h3><div class="meta">Send the group your exact spot</div></div></div><div class="body"><p>Grabs your position and hands it to your share sheet as a map link — for “I’m at Kehoe’s, come find me.”</p><p><b>For live tracking instead:</b> WhatsApp group chat → the <b>+</b> or paperclip → <b>Location</b> → <b>Share live location</b> → 8 hours. That keeps running with the phone locked; this page cannot.</p></div><div class="acts"><button class="btn" type="button" data-act="locate">Drop my pin</button><button class="btn ghost" type="button" data-act="showme">Show me on the map</button></div><div class="locate-out" id="locate-out" hidden></div></article><div class="label">At a glance</div><div class="rail"><div><b>11</b><span>Days</span></div><div><b>8</b><span>Rounds</span></div><div><b>4</b><span>Hotels</span></div><div><b>~930</b><span>km driven</span></div></div><article class="card static"><div class="head"><div class="badge b-air">☰</div><div><h3>Shea Norris · driver</h3><div class="meta">Deluxe Tours and Transfers</div></div></div><div class="acts"><span class="btn ghost wide" style="cursor:default">Number is in the private copy</span></div></article></section>
     <section class="panel" id="p-days" role="tabpanel"><div class="note">Tap a day to open it. Tee times you type are kept on this phone.</div><div class="cols"><article class="card tap now" data-place="dub" tabindex="0" role="button"><div class="head"><div class="badge b-air">18</div><div><h3>Depart Toronto</h3><div class="meta">Fri 18 Sep · WestJet 46 · about 22:10 ET</div></div></div><div class="body"><p>Overnight to Dublin. Waterproofs, shoes and a change of clothes in the carry-on — eight rounds is a bad week to lose a bag.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Wheels up</b><span>Toronto Pearson, local time</span></span><input type="time" data-slot="t-dep" value="" aria-label="Wheels up"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.4264,-6.2443" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="dub">Show on map</button></div></article><article class="card tap" data-place="maldron" tabindex="0" role="button"><div class="head"><div class="badge b-stay">19</div><div><h3>Land Dublin · Maldron Parnell Square</h3><div class="meta">Sat 19 Sep · Parnell Square West, D01 HX02</div></div></div><div class="body"><p>Land Saturday morning IST. One night at the Maldron before the run north. Pull euro cash — the Donegal end is euro, and you switch to sterling on Wednesday.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Landing</b><span>Dublin, IST</span></span><input type="time" data-slot="t-land" value="" aria-label="Landing"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.3544,-6.2664" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="maldron">Show on map</button></div></article><article class="card tap" data-place="rosapenna" tabindex="0" role="button"><div class="head"><div class="badge b-rosa">20</div><div><h3>Transfer to Rosapenna</h3><div class="meta">Sun 20 Sep · About 255 km · 3.5–4 hrs</div></div></div><div class="body"><p>Shea Norris drives Dublin to Downings up the N2/A5/N14 corridor. Confirm the pickup point and time with him the night before — this is the one leg with no fallback.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Pickup</b><span>Confirm the spot with Shea</span></span><input type="time" data-slot="t-pick20" value="" aria-label="Pickup"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=55.1888,-7.8288" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="rosapenna">Show on map</button></div></article><article class="card tap" data-place="pavilion" tabindex="0" role="button"><div class="head"><div class="badge b-golf">21</div><div><h3>Old Tom Morris Links</h3><div class="meta">Mon 21 Sep · Rosapenna · Golf Pavilion</div></div></div><div class="body"><p>Opening round on the 1893 Morris links along Tramore Beach. Check in at the Golf Pavilion, about 400 m from the hotel door — not at reception.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Tee time</b><span>Old Tom Morris Links</span></span><input type="time" data-slot="t-21" value="" aria-label="Tee time"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=55.1855,-7.8246" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="pavilion">Show on map</button></div></article><article class="card tap" data-place="stpatricks" tabindex="0" role="button"><div class="head"><div class="badge b-golf">22</div><div><h3>St Patrick's + Sandy Hills</h3><div class="meta">Tue 22 Sep · Double day at Rosapenna</div></div></div><div class="body"><p>Thirty-six holes. St Patrick's is 5 km up the road and there is no shuttle — the vehicle has to be sorted before breakfast. Sandy Hills is back at the Pavilion.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Tee time · St Patrick's</b><span>Drive yourself, 5–10 min</span></span><input type="time" data-slot="t-22a" value="" aria-label="Tee time · St Patrick's"></label><label class="slot"><span class="sl"><b>Tee time · Sandy Hills</b><span>Golf Pavilion</span></span><input type="time" data-slot="t-22b" value="" aria-label="Tee time · Sandy Hills"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=55.164,-7.8197" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="stpatricks">Show on map</button></div></article><article class="card tap" data-place="portstewart" tabindex="0" role="button"><div class="head"><div class="badge b-derry">23</div><div><h3>Portstewart Strand → Derry</h3><div class="meta">Wed 23 Sep · Cross into sterling today</div></div></div><div class="body"><p>Check out, drive to Portstewart (about 120 km, allow 2–2.5 hrs for border roads and Letterkenny), play the Strand, then 55 km on to The Ebrington. Sterling from the first tee.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Depart Rosapenna</b><span>Bags in the van</span></span><input type="time" data-slot="t-pick23" value="" aria-label="Depart Rosapenna"></label><label class="slot"><span class="sl"><b>Tee time · Portstewart</b><span>Strand Course</span></span><input type="time" data-slot="t-23" value="" aria-label="Tee time · Portstewart"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=55.172,-6.7246" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="portstewart">Show on map</button></div></article><article class="card tap" data-place="portrush" tabindex="0" role="button"><div class="head"><div class="badge b-golf">24</div><div><h3>Royal Portrush · Dunluce</h3><div class="meta">Thu 24 Sep · About 57 km from Derry · 50–70 min</div></div></div><div class="body"><p>The big one. Bring the handicap certificate — the club asks for recognised club membership and may want to see it. Dress code is enforced: no blue denim, no collarless shirts, no cargo or beach shorts.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Tee time</b><span>Dunluce Links</span></span><input type="time" data-slot="t-24" value="" aria-label="Tee time"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=55.1997,-6.6354" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="portrush">Show on map</button></div></article><article class="card tap" data-place="ballyliffin" tabindex="0" role="button"><div class="head"><div class="badge b-golf">25</div><div><h3>Ballyliffin · Glashedy</h3><div class="meta">Fri 25 Sep · About 50 km from Derry · 45–60 min</div></div></div><div class="body"><p>Day trip into Inishowen and back over the border into euro — Glashedy is a Republic course despite sitting further north than anywhere in Northern Ireland. Exposed: take the heavy layer.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Tee time</b><span>Glashedy Links</span></span><input type="time" data-slot="t-25" value="" aria-label="Tee time"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=55.2924,-7.3731" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="ballyliffin">Show on map</button></div></article><article class="card tap" data-place="jameson" tabindex="0" role="button"><div class="head"><div class="badge b-stay">26</div><div><h3>Jameson Links → Davenport</h3><div class="meta">Sat 26 Sep · About 225 km · 3–3.5 hrs</div></div></div><div class="body"><p>Long run south from Derry to Portmarnock, play, then into Dublin 2 and the Davenport. Back to euro the moment you cross.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Depart Derry</b><span>Early — it is a 3 hr run</span></span><input type="time" data-slot="t-pick26" value="" aria-label="Depart Derry"></label><label class="slot"><span class="sl"><b>Tee time · Jameson</b><span>Portmarnock Resort</span></span><input type="time" data-slot="t-26" value="" aria-label="Tee time · Jameson"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.429,-6.1262" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="jameson">Show on map</button></div></article><article class="card tap" data-place="royaldublin" tabindex="0" role="button"><div class="head"><div class="badge b-golf">27</div><div><h3>The Royal Dublin</h3><div class="meta">Sun 27 Sep · About 10 km · 20–25 min</div></div></div><div class="body"><p>Last round. Harry Colt on North Bull Island, over the wooden bridge at Dollymount. Christy O'Connor Snr was the pro here for 57 years.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Tee time</b><span>Royal Dublin</span></span><input type="time" data-slot="t-27" value="" aria-label="Tee time"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.3567,-6.1707" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="royaldublin">Show on map</button></div></article><article class="card tap" data-place="dub" tabindex="0" role="button"><div class="head"><div class="badge b-air">28</div><div><h3>Fly home</h3><div class="meta">Mon 28 Sep · Air Transat 231 · Dublin → Toronto</div></div></div><div class="body"><p>About 12.6 km to the airport, but allow 25–40 minutes for the Port Tunnel. Spend or swap the leftover sterling before you go — it is no use in the Republic.</p></div><div class="slots"><label class="slot"><span class="sl"><b>Pickup</b><span>Davenport to DUB</span></span><input type="time" data-slot="t-pick28" value="" aria-label="Pickup"></label><label class="slot"><span class="sl"><b>Departure</b><span>Air Transat 231</span></span><input type="time" data-slot="t-fly" value="" aria-label="Departure"></label></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.4264,-6.2443" target="_blank" rel="noopener">Directions</a><button class="btn ghost" type="button" data-show="dub">Show on map</button></div></article></div></section>
     <section class="panel" id="p-courses" role="tabpanel"><div class="label">Donegal · from Rosapenna</div><div class="cols"><article class="card tap row" data-place="pavilion" tabindex="0" role="button"><h4>Rosapenna · Old Tom Morris Links</h4><p>Mon 21 Sep. Laid out by Old Tom Morris in 1893 along Tramore Beach, bunkered by Vardon and Braid in 1906 and revised by Colt in 1911; Pat Ruddy replaced the front nine in 2009, so the Morris holes are today's back nine.</p><span class="go">Tap for the map · € euro</span></article><article class="card tap row" data-place="stpatricks" tabindex="0" role="button"><h4>St Patrick's Links at Rosapenna</h4><p>Tue 22 Sep, round 1. Tom Doak, opened 2021. 5 km from the hotel, no shuttle, walking only — sort the car the night before.</p><span class="go">Tap for the map · € euro</span></article><article class="card tap row" data-place="pavilion" tabindex="0" role="button"><h4>Rosapenna · Sandy Hills Links</h4><p>Tue 22 Sep, round 2. Pat Ruddy, opened July 2003. Rollercoaster dune routing straight off the Pavilion.</p><span class="go">Tap for the map · € euro</span></article></div><div class="label">Causeway &amp; Inishowen · from Derry</div><div class="cols"><article class="card tap row" data-place="portstewart" tabindex="0" role="button"><h4>Portstewart · Strand Course</h4><p>Wed 23 Sep. Original layout attributed to Willie Park Jr; the famous seven dune holes are Des Giffin's, on land bought in 1986 and opened for play in 1992. Hosted the 2017 Irish Open.</p><span class="go">Tap for the map · £ sterling</span></article><article class="card tap row" data-place="portrush" tabindex="0" role="button"><h4>Royal Portrush · Dunluce Links</h4><p>Thu 24 Sep. H.S. Colt. The only Irish venue to have hosted The Open — 1951, 2019 and 2025. Calamity Corner is the 16th on the current routing.</p><span class="go">Tap for the map · £ sterling</span></article><article class="card tap row" data-place="ballyliffin" tabindex="0" role="button"><h4>Ballyliffin · Glashedy Links</h4><p>Fri 25 Sep. Pat Ruddy and Tom Craddock. Ireland's most northerly club; hosted the 2018 Irish Open and the 2024 Amateur Championship.</p><span class="go">Tap for the map · € euro</span></article></div><div class="label">Dublin · from the Davenport</div><div class="cols"><article class="card tap row" data-place="jameson" tabindex="0" role="button"><h4>Jameson Golf Links, Portmarnock</h4><p>Sat 26 Sep. Bernhard Langer's 1995 links, rebranded Jameson in October 2023 after Jeff Lynch's renovation — five new greens, four new tees, a re-routed finish. Part of Portmarnock Resort.</p><span class="go">Tap for the map · € euro</span></article><article class="card tap row" data-place="royaldublin" tabindex="0" role="button"><h4>The Royal Dublin Golf Club</h4><p>Sun 27 Sep. Founded 1885, on North Bull Island since 1890. Colt redesign in the 1920s, Hawtree modernisation 2004–06. Par 72, 7,269 yards.</p><span class="go">Tap for the map · € euro</span></article></div></section>
     <section class="panel" id="p-stays" role="tabpanel"><article class="card tap" data-place="dub" tabindex="0" role="button"><div class="head"><div class="badge b-air">✈</div><div><h3>Dublin Airport</h3><div class="meta">In Sat 19 · out Mon 28</div></div></div><div class="chips"><span class="chip">WestJet 46 in</span><span class="chip">Air Transat 231 out</span><span class="chip">€ EUR</span></div><div class="body"><p>Fri 18 Sep about 22:10 ET: WestJet 46 Toronto to Dublin, landing Saturday morning IST. Mon 28 Sep: transfer back for Air Transat 231.</p></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.4264,-6.2443" target="_blank" rel="noopener">Directions</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=53.4264,-6.2443" target="_blank" rel="noopener">Open in Maps</a></div></article><article class="card tap" data-place="maldron" tabindex="0" role="button"><div class="head"><div class="badge b-stay">1</div><div><h3>Maldron Hotel Parnell Square</h3><div class="meta">Parnell Square West, Dublin 1 · D01 HX02</div></div></div><div class="chips"><span class="chip">Sat 19 Sep</span><span class="chip">1 night</span><span class="chip">€ EUR</span></div><div class="body"><p>Arrival night. Sunday morning Shea Norris collects for the run to Donegal — confirm the pickup point, this is the leg your whole week hangs on.</p></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.3544,-6.2664" target="_blank" rel="noopener">Directions</a><a class="btn ghost" href="tel:+35318716800">Call</a><a class="btn ghost wide" href="https://www.maldronhotels.com/parnell-square/" target="_blank" rel="noopener">Hotel website</a></div></article><article class="card tap" data-place="rosapenna" tabindex="0" role="button"><div class="head"><div class="badge b-rosa">2</div><div><h3>Rosapenna Hotel &amp; Golf Resort</h3><div class="meta">Sheephaven Bay, Downings, Co. Donegal · F92 PN73</div></div></div><div class="chips"><span class="chip">Sun 20 – Wed 23</span><span class="chip">3 nights</span><span class="chip">Old Tom</span><span class="chip">St Patrick's</span><span class="chip">Sandy Hills</span><span class="chip">€ EUR</span></div><div class="body"><p>Golf Mon 21 (Old Tom Morris) and Tue 22 (St Patrick's plus Sandy Hills). Check in for golf at the Golf Pavilion, 400 m from the hotel. Stay desk +353 74 915 5301, golf desk +353 74 915 5000.</p></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=55.1888,-7.8288" target="_blank" rel="noopener">Directions</a><a class="btn ghost" href="tel:+35374915301">Call</a><a class="btn ghost wide" href="https://rosapenna.ie/" target="_blank" rel="noopener">Hotel website</a></div></article><article class="card tap" data-place="ebrington" tabindex="0" role="button"><div class="head"><div class="badge b-derry">3</div><div><h3>The Ebrington Hotel</h3><div class="meta">69–72 Ebrington Square, Derry · BT47 6FA</div></div></div><div class="chips"><span class="chip">Wed 23 – Sat 26</span><span class="chip">3 nights</span><span class="chip">Portrush</span><span class="chip">Ballyliffin</span><span class="chip">Laundry</span><span class="chip">£ GBP</span></div><div class="body"><p>Base for the Causeway Coast rather than staying in Portrush. Wed 23 Portstewart on the way in, Thu 24 Royal Portrush, Fri 25 Ballyliffin. Laundry available — use it, this is the midpoint of the trip.</p></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=54.9978,-7.3128" target="_blank" rel="noopener">Directions</a><a class="btn ghost" href="tel:+442871220700">Call</a><a class="btn ghost wide" href="https://theebringtonhotel.com/" target="_blank" rel="noopener">Hotel website</a></div></article><article class="card tap" data-place="davenport" tabindex="0" role="button"><div class="head"><div class="badge b-stay">4</div><div><h3>The Davenport Hotel</h3><div class="meta">8–10 Merrion Street Lower, Dublin 2 · D02 DX57</div></div></div><div class="chips"><span class="chip">Sat 26 – Mon 28</span><span class="chip">2 nights</span><span class="chip">Jameson</span><span class="chip">Royal Dublin</span><span class="chip">€ EUR</span></div><div class="body"><p>Sat 26 Jameson Links on the way in, Sun 27 Royal Dublin, Mon 28 out to the airport. Walking distance to Trinity, Grafton Street and Kehoe's.</p></div><div class="acts"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=53.3416,-6.2498" target="_blank" rel="noopener">Directions</a><a class="btn ghost" href="tel:+35316073500">Call</a><a class="btn ghost wide" href="https://www.davenporthotel.ie/" target="_blank" rel="noopener">Hotel website</a></div></article></section>
@@ -889,7 +901,21 @@ function renderToday() {
   }
   document.getElementById("trip-status").textContent = statusLine;
 
-  html += '<div class="label">At a glance</div>' +
+  html += '<div class="label">Find each other</div>' +
+    '<article class="card static">' +
+      '<div class="head"><div class="badge b-stay">\u25ce</div><div><h3>Drop my pin</h3>' +
+      '<div class="meta">Send the group your exact spot</div></div></div>' +
+      '<div class="body">' +
+        '<p>Grabs your position and hands it to your share sheet as a map link \u2014 for \u201cI\u2019m at Kehoe\u2019s, come find me.\u201d</p>' +
+        '<p><b>For live tracking instead:</b> WhatsApp group chat \u2192 the <b>+</b> or paperclip \u2192 <b>Location</b> \u2192 <b>Share live location</b> \u2192 8 hours. That keeps running with the phone locked; this page cannot.</p>' +
+      '</div>' +
+      '<div class="acts">' +
+        '<button class="btn" type="button" data-act="locate">Drop my pin</button>' +
+        '<button class="btn ghost" type="button" data-act="showme">Show me on the map</button>' +
+      '</div>' +
+      '<div class="locate-out" id="locate-out" hidden></div>' +
+    '</article>' +
+    '<div class="label">At a glance</div>' +
     '<div class="rail">' +
       '<div><b>11</b><span>Days</span></div>' +
       '<div><b>8</b><span>Rounds</span></div>' +
@@ -1138,6 +1164,113 @@ function showPlace(id) {
 }
 
 /* ===========================================================
+   Find each other
+   ----------------------------------------------------------
+   Deliberately a manual check-in. A web page only gets GPS while
+   it is open and in front, so anything "live" here would quietly
+   go stale the moment the phone locked.
+   =========================================================== */
+var youMarker = null, youRing = null, lastFix = null;
+
+function locSay(html) {
+  var out = document.getElementById("locate-out");
+  if (!out) return;
+  out.innerHTML = html;
+  out.hidden = false;
+}
+
+function getFix(onOk) {
+  if (location.protocol === "file:") {
+    locSay("Browsers block location on files opened from disk. Open the shared link instead \u2014 it works there.");
+    return;
+  }
+  if (!navigator.geolocation) {
+    locSay("This browser will not share a location.");
+    return;
+  }
+  locSay("Getting your position\u2026");
+  navigator.geolocation.getCurrentPosition(
+    function (pos) { onOk(pos.coords); },
+    function (err) {
+      locSay(err && err.code === 1
+        ? "Location permission was declined. Turn it back on for this site in your browser settings, then try again."
+        : "No fix yet \u2014 step outside or away from the building and try again.");
+    },
+    { enableHighAccuracy: true, timeout: 15000, maximumAge: 30000 }
+  );
+}
+
+function markYou(lat, lng, acc) {
+  if (!map || typeof L === "undefined") return;
+  if (document.body.classList.contains("map-off")) setMap(true);
+  if (youMarker) map.removeLayer(youMarker);
+  if (youRing) map.removeLayer(youRing);
+  youMarker = L.marker([lat, lng], {
+    icon: L.divIcon({
+      className: "", iconSize: [30, 30], iconAnchor: [15, 29], popupAnchor: [0, -26],
+      html: '<div class="pin" style="background:#c9573f"><span>\u25cf</span></div>'
+    }),
+    title: "You", zIndexOffset: 900
+  }).addTo(map).bindPopup('<div class="popup"><h4>You are here</h4></div>');
+  if (acc) youRing = L.circle([lat, lng], { radius: acc, color: "#c9573f", weight: 1, fillOpacity: 0.1 }).addTo(map);
+  mapTouched = true;
+  map.flyTo([lat, lng], Math.max(map.getZoom(), 15), { duration: 0.6 });
+}
+
+function pinMessage(c) {
+  var lat = c.latitude.toFixed(5), lng = c.longitude.toFixed(5);
+  var t = new Date();
+  var hh = ("0" + t.getHours()).slice(-2) + ":" + ("0" + t.getMinutes()).slice(-2);
+  return {
+    url: "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lng,
+    text: "I'm here at " + hh + (c.accuracy ? " (\u00b1" + Math.round(c.accuracy) + " m)" : "") +
+          " \u2014 https://www.google.com/maps/search/?api=1&query=" + lat + "," + lng
+  };
+}
+
+function dropPin() {
+  getFix(function (c) {
+    lastFix = pinMessage(c);
+    markYou(c.latitude, c.longitude, c.accuracy);
+    /* A second, separate tap keeps the share sheet inside a user gesture,
+       which iOS Safari insists on. */
+    locSay('<p>Got it.</p>' +
+      '<div class="acts">' +
+        '<button class="btn" type="button" data-act="send">Send to the group</button>' +
+        '<button class="btn ghost" type="button" data-act="copy">Copy the link</button>' +
+      '</div>' +
+      '<p class="fix"><a href="' + lastFix.url + '" target="_blank" rel="noopener">' + lastFix.url + '</a></p>');
+  });
+}
+
+function sendPin() {
+  if (!lastFix) { dropPin(); return; }
+  if (navigator.share) {
+    navigator.share({ text: lastFix.text }).then(function () {
+      locSay("Sent.");
+    }, function () {
+      locSay('<p>Share cancelled. The link is still here:</p><p class="fix"><a href="' + lastFix.url + '" target="_blank" rel="noopener">' + lastFix.url + '</a></p>');
+    });
+  } else {
+    copyPin();
+  }
+}
+
+function copyPin() {
+  if (!lastFix) { dropPin(); return; }
+  var done = function () {
+    locSay('<p>Copied \u2014 paste it into the group chat.</p><p class="fix">' + lastFix.text + '</p>');
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(lastFix.text).then(done, function () {
+      locSay('<p>Copy it by hand:</p><p class="fix">' + lastFix.text + '</p>');
+    });
+  } else {
+    locSay('<p>Copy it by hand:</p><p class="fix">' + lastFix.text + '</p>');
+  }
+}
+
+/* ===========================================================
    Wiring
    =========================================================== */
 function setMap(on, then) {
@@ -1239,6 +1372,16 @@ function boot() {
 
     var showBtn = t.closest("[data-show]");
     if (showBtn) { showPlace(showBtn.dataset.show); return; }
+
+    var act = t.closest("[data-act]");
+    if (act) {
+      var a = act.dataset.act;
+      if (a === "locate") dropPin();
+      else if (a === "send") sendPin();
+      else if (a === "copy") copyPin();
+      else if (a === "showme") getFix(function (c) { markYou(c.latitude, c.longitude, c.accuracy); locSay("You are the red pin on the map."); });
+      return;
+    }
 
     if (t.closest("a") || t.closest("input") || t.closest("label")) return;
 
